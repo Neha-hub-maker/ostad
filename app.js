@@ -110,6 +110,7 @@
     var text = Rules.mask(raw).slice(0, 1500), a = Rules.analyze(text);
     var base = { text: text, verdict: Rules.NAMES[a.floor], mode: 'rules', hits: a.hits, reasons: [], warnText: a.warnText, masked: text !== raw };
     busy = true; $('go').disabled = true; $('status').textContent = T[lang].busy;
+    if ($('saveStatus')) $('saveStatus').textContent = '';
     render(base);
     fetch('/api/analyze', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: text, lang: lang }) })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
@@ -129,6 +130,7 @@
     $('steps').hidden = true;
     expBtns.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
     if (last) check();
+    if ($('saveBtn')) $('saveBtn').textContent = lang === 'en' ? 'Save to this device' : 'এই ডিভাইসে সংরক্ষণ করুন';
   }
 
   EX.forEach(function (txt) {
@@ -167,6 +169,27 @@
   document.addEventListener('langchange', onLangChange);
   window.addEventListener('langchange', onLangChange);
   $('go').onclick = check;
+  var saveBtn = $('saveBtn');
+  if (saveBtn) {
+    saveBtn.onclick = function () {
+      if (!last || !window.HistoryStore) return;
+      var saved = window.HistoryStore.save({
+        verdict: last.verdict,
+        mode: last.mode || 'rules',
+        text: last.text,
+        hits: last.hits || [],
+        reasons: last.reasons || [],
+        language: lang
+      });
+      var statusEl = $('saveStatus');
+      if (statusEl) {
+        statusEl.textContent = saved
+          ? (lang === 'en' ? '✓ Saved to this device' : '✓ এই ডিভাইসে সংরক্ষিত হয়েছে')
+          : (lang === 'en' ? 'Could not save' : 'সংরক্ষণ করা যায়নি');
+        setTimeout(function () { if (statusEl) statusEl.textContent = ''; }, 3500);
+      }
+    };
+  }
   var s = $('sticker');
   s.onerror = function () { var x = document.createElement('span'); x.className = 'stk'; x.textContent = 'Built For Ostad Presents YUNet AIgnite Buildathon 2026'; s.replaceWith(x); };
   applyLang();
