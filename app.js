@@ -1,6 +1,8 @@
 (function () {
   var $ = function (id) { return document.getElementById(id); };
-  var lang = 'bn', last = null, busy = false, expBtns = [], exBtns = [];
+  var lang = (function () {
+    try { return localStorage.getItem('lang') || 'bn'; } catch (e) { return 'bn'; }
+  })(), last = null, busy = false, expBtns = [], exBtns = [];
   var EX = [
     'অভিনন্দন! আপনি ৫,০০০ টাকা বোনাস জিতেছেন। বোনাস পেতে এখনই আপনার বিকাশ পিন ও OTP কোড আমাদের জানান, নয়তো ২৪ ঘণ্টার মধ্যে অ্যাকাউন্ট বন্ধ হয়ে যাবে।',
     'Dear Customer, never share your OTP, PIN or CVV with anyone, including bank staff. Beware of fake cashback links and unknown loan apps.',
@@ -33,7 +35,7 @@
       ],
       modeAI: 'নিয়ম + AI বিশ্লেষণ', aiOff: 'AI বিশ্লেষণ এখন পাওয়া যাচ্ছে না; শুধু নিয়ম-ভিত্তিক ফলাফল দেখানো হচ্ছে।',
       rate: 'AI এখন ব্যস্ত; শুধু নিয়ম-ভিত্তিক ফলাফল দেখানো হচ্ছে। কিছুক্ষণ পর আবার চেষ্টা করুন।', masked: 'বড় সংখ্যা ও কোড ঢেকে দেওয়া হয়েছে।',
-      priv: 'ঢেকে-দেওয়া টেক্সট বিশ্লেষণের জন্য একটি AI সেবায় (Groq) যায়। মেসেজ আমরা সংরক্ষণ করি না। তবু পাসওয়ার্ড, পিন বা OTP পেস্ট করবেন না।'
+      priv: 'আমাদের সার্ভারে কোনো তথ্য সংরক্ষণ করা হয় না। বিশ্লেষণের জন্য মাস্কড (ঢেকে দেওয়া) টেক্সট একটি AI সেবায় পাঠানো হয়। আপনি \'সংরক্ষণ\' নির্বাচন করলে চেকটি কেবল এই ডিভাইসেই সংরক্ষিত থাকবে এবং আপনি যেকোনো সময় এটি মুছে ফেলতে পারবেন।'
     },
     en: {
       title: 'Scam Message Explainer', tag: 'Paste a suspicious message. See why it is risky and what to do next.',
@@ -61,7 +63,7 @@
       ],
       modeAI: 'Rules + AI analysis', aiOff: 'AI analysis is unavailable right now. Showing the rule-based result only.',
       rate: 'AI is busy. Showing the rule-based result only. Please try again shortly.', masked: 'Long numbers and codes were hidden.',
-      priv: 'Masked text is sent to an AI service (Groq) for analysis. We do not store messages. Still, never paste passwords, PINs or OTPs.'
+      priv: 'Nothing is stored on our servers. Masked text is sent to an AI service for analysis. If you choose Save, the check is stored only on this device and you can delete it any time.'
     }
   };
 
@@ -108,6 +110,7 @@
     var text = Rules.mask(raw).slice(0, 1500), a = Rules.analyze(text);
     var base = { text: text, verdict: Rules.NAMES[a.floor], mode: 'rules', hits: a.hits, reasons: [], warnText: a.warnText, masked: text !== raw };
     busy = true; $('go').disabled = true; $('status').textContent = T[lang].busy;
+    if ($('saveStatus')) $('saveStatus').textContent = '';
     render(base);
     fetch('/api/analyze', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: text, lang: lang }) })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
@@ -127,6 +130,7 @@
     $('steps').hidden = true;
     expBtns.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
     if (last) check();
+    if ($('saveBtn')) $('saveBtn').textContent = lang === 'en' ? 'Save to this device' : 'এই ডিভাইসে সংরক্ষণ করুন';
   }
 
   EX.forEach(function (txt) {
@@ -143,8 +147,49 @@
     };
     $('exp').appendChild(b); expBtns.push(b);
   })(i);
-  document.querySelectorAll('[data-l]').forEach(function (b) { b.onclick = function () { lang = b.getAttribute('data-l'); applyLang(); }; });
+  function updateLang(newL) {
+    if (!newL || newL === lang) return;
+    lang = newL;
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+    applyLang();
+    var evt = new CustomEvent('langchange', { detail: { lang: lang } });
+    document.dispatchEvent(evt);
+    window.dispatchEvent(evt);
+  }
+  document.querySelectorAll('[data-l]').forEach(function (b) { b.onclick = function () { updateLang(b.getAttribute('data-l')); }; });
+  function onLangChange(e) {
+    var l = (e && e.detail && e.detail.lang) || (function () {
+      try { return localStorage.getItem('lang') || 'bn'; } catch (err) { return 'bn'; }
+    })();
+    if (l && l !== lang) {
+      lang = l;
+      applyLang();
+    }
+  }
+  document.addEventListener('langchange', onLangChange);
+  window.addEventListener('langchange', onLangChange);
   $('go').onclick = check;
+  var saveBtn = $('saveBtn');
+  if (saveBtn) {
+    saveBtn.onclick = function () {
+      if (!last || !window.HistoryStore) return;
+      var saved = window.HistoryStore.save({
+        verdict: last.verdict,
+        mode: last.mode || 'rules',
+        text: last.text,
+        hits: last.hits || [],
+        reasons: last.reasons || [],
+        language: lang
+      });
+      var statusEl = $('saveStatus');
+      if (statusEl) {
+        statusEl.textContent = saved
+          ? (lang === 'en' ? '✓ Saved to this device' : '✓ এই ডিভাইসে সংরক্ষিত হয়েছে')
+          : (lang === 'en' ? 'Could not save' : 'সংরক্ষণ করা যায়নি');
+        setTimeout(function () { if (statusEl) statusEl.textContent = ''; }, 3500);
+      }
+    };
+  }
   var s = $('sticker');
   s.onerror = function () { var x = document.createElement('span'); x.className = 'stk'; x.textContent = 'Built For Ostad Presents YUNet AIgnite Buildathon 2026'; s.replaceWith(x); };
   applyLang();

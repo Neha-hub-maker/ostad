@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scam Message Explainer - মেসেজ যাচাই</title>
+<meta name="description" content="সন্দেহজনক মেসেজ পেস্ট করে তৎক্ষণাৎ নিয়ম ও এআই বিশ্লেষণ দেখুন।">
+<meta property="og:title" content="Scam Message Explainer - মেসেজ যাচাই">
+<meta property="og:description" content="সন্দেহজনক মেসেজ পেস্ট করে তৎক্ষণাৎ নিয়ম ও এআই বিশ্লেষণ দেখুন।">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/sticker.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path fill='%230B5D8A' d='M16 2 L28 6 V16 C28 23 23 28 16 30 C9 28 4 23 4 16 V6 Z'/><path fill='%23ffffff' d='M14 19 L10 15 L12 13 L14 15 L20 9 L22 11 Z'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="site-header"></header>
+
+<main class="tool-main container">
+  <div class="tool-header">
+    <h1 data-t="tag">সন্দেহজনক মেসেজ পেস্ট করুন। বুঝুন কেন ঝুঁকিপূর্ণ এবং এখন কী করবেন।</h1>
+    <p class="small" data-bn="প্রতারণামূলক মেসেজ, ওটিপি ফাঁদ বা ভুয়া অফার তৎক্ষণাৎ শনাক্ত করুন।" data-en="Instantly analyze suspicious messages, OTP traps, or fake offers.">প্রতারণামূলক মেসেজ, ওটিপি ফাঁদ বা ভুয়া অফার তৎক্ষণাৎ শনাক্ত করুন।</p>
+  </div>
+
+  <label for="msg" class="sr" data-t="lbl">সন্দেহজনক মেসেজ</label>
+  <textarea id="msg" rows="6" maxlength="1500" placeholder="এখানে মেসেজটি পেস্ট করুন…"></textarea>
+
+  <div class="row">
+    <button id="go" type="button" class="btn btn-primary primary" data-t="check">যাচাই করুন</button>
+    <span class="exlab" data-t="ex">উদাহরণ:</span>
+    <span id="exs"></span>
+  </div>
+
+  <p id="status" class="status" role="status" aria-live="polite"></p>
+
+  <section id="result" class="res" hidden aria-live="polite">
+    <h2 id="vlabel" class="verdict"></h2>
+    <p id="summary" class="summary"></p>
+    <p id="modeline" class="small"></p>
+    <p id="shown" class="shown"></p>
+    <h3 data-t="why">কেন সতর্কতা?</h3>
+    <ul id="why"></ul>
+    <p id="now" class="now"></p>
+    <p id="banner" class="small"></p>
+    <h3 data-t="acted">আগেই কিছু করে ফেলেছেন?</h3>
+    <div id="exp" class="exp"></div>
+    <p id="steps" class="steps" hidden></p>
+    <div class="save-bar" style="margin-top:18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+      <button id="saveBtn" type="button" class="btn btn-secondary" data-bn="এই ডিভাইসে সংরক্ষণ করুন" data-en="Save to this device">এই ডিভাইসে সংরক্ষণ করুন</button>
+      <span id="saveStatus" class="save-status" role="status" aria-live="polite" style="font-size:0.92rem;font-weight:600;color:var(--brand);"></span>
+    </div>
+  </section>
+
+  <p class="small priv" data-t="priv" data-bn="আমাদের সার্ভারে কোনো তথ্য সংরক্ষণ করা হয় না। বিশ্লেষণের জন্য মাস্কড (ঢেকে দেওয়া) টেক্সট একটি AI সেবায় পাঠানো হয়। আপনি 'সংরক্ষণ' নির্বাচন করলে চেকটি কেবল এই ডিভাইসেই সংরক্ষিত থাকবে এবং আপনি যেকোনো সময় এটি মুছে ফেলতে পারবেন।" data-en="Nothing is stored on our servers. Masked text is sent to an AI service for analysis. If you choose Save, the check is stored only on this device and you can delete it any time.">আমাদের সার্ভারে কোনো তথ্য সংরক্ষণ করা হয় না। বিশ্লেষণের জন্য মাস্কড (ঢেকে দেওয়া) টেক্সট একটি AI সেবায় পাঠানো হয়। আপনি 'সংরক্ষণ' নির্বাচন করলে চেকটি কেবল এই ডিভাইসেই সংরক্ষিত থাকবে এবং আপনি যেকোনো সময় এটি মুছে ফেলতে পারবেন।</p>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="site.js"></script>
+<script src="history.js"></script>
+<script src="rules.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

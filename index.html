@@ -3,49 +3,357 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Scam Message Explainer</title>
+<title>Scam Message Explainer - প্রতারণামূলক মেসেজ সতর্কবার্তা ও বিশ্লেষণ</title>
+<meta name="description" content="বিকাশ, নগদ বা ব্যাংকের নামে আসা সন্দেহজনক মেসেজের ঝুঁকি যাচাই করুন। কোনো ব্যক্তিগত তথ্য সার্ভারে জমা হয় না।">
+<meta property="og:title" content="Scam Message Explainer - প্রতারণামূলক মেসেজ সতর্কবার্তা">
+<meta property="og:description" content="সন্দেহজনক মেসেজের ঝুঁকি যাচাই করুন। সার্ভারে কোনো তথ্য জমা হয় না।">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/sticker.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path fill='%230B5D8A' d='M16 2 L28 6 V16 C28 23 23 28 16 30 C9 28 4 23 4 16 V6 Z'/><path fill='%23ffffff' d='M14 19 L10 15 L12 13 L14 15 L20 9 L22 11 Z'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="bar">
-  <strong data-t="title"></strong>
-  <div class="tools">
-    <img id="sticker" src="assets/sticker.png" width="188" height="56" alt="Built For Ostad Presents YUNet AIgnite Buildathon 2026">
-    <div class="lang" role="group" aria-label="Language">
-      <button type="button" data-l="bn" aria-pressed="true">বাংলা</button>
-      <button type="button" data-l="en" aria-pressed="false">English</button>
+
+<header id="site-header"></header>
+
+<!-- Hero Section (Deep Navy) -->
+<section class="hero-band">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <h1 data-bn="কোনো মেসেজে সন্দেহ হচ্ছে? ক্লিক করার আগেই ঝুঁকি জেনে নিন।" data-en="Suspicious message received? Know the risks before you click.">
+        কোনো মেসেজে সন্দেহ হচ্ছে? ক্লিক করার আগেই ঝুঁকি জেনে নিন।
+      </h1>
+      <p class="hero-tagline" data-bn="বিকাশ, নগদ বা ব্যাংকের নামে আসা মেসেজটি আসলে কতটা ঝুঁকিপূর্ণ? কোনো ব্যক্তিগত তথ্য বা পাসওয়ার্ড না দিয়ে এখানে নিরপেক্ষভাবে বিশ্লেষণ করুন।" data-en="Is that urgent message from your bank or mobile wallet genuine or a scam? Get an objective, private safety breakdown without sharing credentials.">
+        বিকাশ, নগদ বা ব্যাংকের নামে আসা মেসেজটি আসলে কতটা ঝুঁকিপূর্ণ? কোনো ব্যক্তিগত তথ্য বা পাসওয়ার্ড না দিয়ে এখানে নিরপেক্ষভাবে বিশ্লেষণ করুন।
+      </p>
+      <div class="hero-actions">
+        <a href="check.html" class="btn btn-primary btn-lg" data-bn="মেসেজ যাচাই করুন" data-en="Check a message">
+          মেসেজ যাচাই করুন
+        </a>
+        <a href="#how-it-works" class="btn btn-light btn-lg" data-bn="কিভাবে কাজ করে জানুন" data-en="How it works">
+          কিভাবে কাজ করে জানুন
+        </a>
+      </div>
+      <div class="hero-notice" data-bn="🔒 সার্ভারে কোনো মেসেজ জমা হয় না • কোনো অ্যাকাউন্ট বা অ্যাপ ইনস্টলের প্রয়োজন নেই" data-en="🔒 Zero server storage • No login or app installation required">
+        🔒 সার্ভারে কোনো মেসেজ জমা হয় না • কোনো অ্যাকাউন্ট বা অ্যাপ ইনস্টলের প্রয়োজন নেই
+      </div>
+    </div>
+
+    <!-- CSS-Built Mock Result Card -->
+    <div class="hero-preview">
+      <div class="mock-card">
+        <div class="mock-badge-bar">
+          <span class="mock-label" data-bn="কাল্পনিক নমুনা মেসেজ" data-en="Fictional Sample Message">কাল্পনিক নমুনা মেসেজ</span>
+          <span style="font-size:0.8rem;color:var(--mute);" data-bn="ফলাফল প্রিভিউ" data-en="Result Preview">ফলাফল প্রিভিউ</span>
+        </div>
+        <div class="mock-chip-group">
+          <span class="verdict-chip strong" data-bn="▲ শক্ত সতর্কতা" data-en="▲ Strong warning">▲ শক্ত সতর্কতা</span>
+          <span class="verdict-chip some" data-bn="● কিছু সতর্কতা" data-en="● Some warning">● কিছু সতর্কতা</span>
+          <span class="verdict-chip cant" data-bn="? বোঝা যাচ্ছে না" data-en="? Cannot tell">? বোঝা যাচ্ছে না</span>
+        </div>
+        <div class="mock-msg-box">
+          <span data-bn="অভিনন্দন! আপনি ৫,০০০ টাকা বোনাস জিতেছেন। বোনাস পেতে এখনই " data-en="Congratulations! You won a 5,000 BDT bonus. Share your ">অভিনন্দন! আপনি ৫,০০০ টাকা বোনাস জিতেছেন। বোনাস পেতে এখনই </span><mark data-bn="বিকাশ পিন ও OTP কোড" data-en="PIN and OTP code">বিকাশ পিন ও OTP কোড</mark><span data-bn=" জানান, নয়তো " data-en=" now, or "> জানান, নয়তো </span><mark data-bn="২৪ ঘণ্টার মধ্যে অ্যাকাউন্ট বন্ধ" data-en="account will be closed in 24 hrs">২৪ ঘণ্টার মধ্যে অ্যাকাউন্ট বন্ধ</mark><span data-bn=" হয়ে যাবে।" data-en="."> হয়ে যাবে।</span>
+        </div>
+        <div class="mock-analysis-box">
+          <div class="mock-analysis-title" data-bn="▲ গুরুতর প্রতারণার লক্ষণ শনাক্ত হয়েছে" data-en="▲ Critical Scam Warning Signs Detected">▲ গুরুতর প্রতারণার লক্ষণ শনাক্ত হয়েছে</div>
+          <p class="mock-analysis-desc" data-bn="মেসেজটিতে মিথ্যা লোভ ও জরুরি অ্যাকাউন্ট বন্ধের ভয় দেখিয়ে গোপন পিন ও ওটিপি হাতিয়ে নেওয়ার স্পষ্ট চেষ্টা করা হয়েছে।" data-en="The message applies urgency and fear of account closure to extract confidential PIN and OTP codes.">
+            মেসেজটিতে মিথ্যা লোভ ও জরুরি অ্যাকাউন্ট বন্ধের ভয় দেখিয়ে গোপন পিন ও ওটিপি হাতিয়ে নেওয়ার স্পষ্ট চেষ্টা করা হয়েছে।
+          </p>
+        </div>
+      </div>
     </div>
   </div>
-</header>
-<main>
-  <h1 data-t="tag"></h1>
-  <label for="msg" class="sr" data-t="lbl"></label>
-  <textarea id="msg" rows="6" maxlength="1500"></textarea>
-  <div class="row">
-    <button id="go" type="button" class="primary" data-t="check"></button>
-    <span class="exlab" data-t="ex"></span>
-    <span id="exs"></span>
-  </div>
-  <p id="status" class="status" role="status" aria-live="polite"></p>
+</section>
 
-  <section id="result" class="res" hidden aria-live="polite">
-    <h2 id="vlabel" class="verdict"></h2>
-    <p id="summary" class="summary"></p>
-    <p id="modeline" class="small"></p>
-    <p id="shown" class="shown"></p>
-    <h3 data-t="why"></h3>
-    <ul id="why"></ul>
-    <p id="now" class="now"></p>
-    <p id="banner" class="small"></p>
-    <h3 data-t="acted"></h3>
-    <div id="exp" class="exp"></div>
-    <p id="steps" class="steps" hidden></p>
-  </section>
-  <p class="small priv" data-t="priv"></p>
-</main>
-<script src="rules.js"></script>
-<script src="app.js"></script>
+<!-- Three Trust Promises -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" data-bn="আমাদের প্রতিশ্রুতি" data-en="Our Core Principles">আমাদের প্রতিশ্রুতি</div>
+      <h2 class="section-title" data-bn="৩টি বিশ্বাসযোগ্য প্রতিশ্রুতি" data-en="Three Trust Promises">৩টি বিশ্বাসযোগ্য প্রতিশ্রুতি</h2>
+      <p class="section-sub" data-bn="ব্যবহারকারীর নিরাপত্তা ও ডেটা গোপনীয়তাই আমাদের মূল নীতি।" data-en="User safety, honest communication, and absolute privacy come first.">ব্যবহারকারীর নিরাপত্তা ও ডেটা গোপনীয়তাই আমাদের মূল নীতি।</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-icon">🛡️</div>
+        <h3 data-bn="১. সার্ভারে কোনো ডেটা জমা হয় না" data-en="1. Zero Server Storage">১. সার্ভারে কোনো ডেটা জমা হয় না</h3>
+        <p data-bn="আপনার পেস্ট করা কোনো মেসেজ বা তথ্য আমাদের সার্ভারে সংরক্ষণ করা হয় না। বিশ্লেষণ সম্পূর্ণ ক্ষণস্থায়ী।" data-en="Your pasted messages are never saved on our servers. Analysis is strictly ephemeral and temporary.">আপনার পেস্ট করা কোনো মেসেজ বা তথ্য আমাদের সার্ভারে সংরক্ষণ করা হয় না। বিশ্লেষণ সম্পূর্ণ ক্ষণস্থায়ী।</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👁️‍🗨️</div>
+        <h3 data-bn="২. কোনো ট্র্যাকার বা অ্যাকাউন্ট নেই" data-en="2. No Trackers or Accounts">২. কোনো ট্র্যাকার বা অ্যাকাউন্ট নেই</h3>
+        <p data-bn="কোনো সাইন-আপ, মোবাইল নম্বর বা কুকি ট্র্যাকিং নেই। আপনার ব্যক্তিগত নম্বর ব্রাউজারেই স্বয়ংক্রিয়ভাবে ঢেকে দেওয়া হয়।" data-en="No sign-up, login, or tracking cookies. Phone numbers and OTP codes are masked client-side before processing.">কোনো সাইন-আপ, মোবাইল নম্বর বা কুকি ট্র্যাকিং নেই। আপনার ব্যক্তিগত নম্বর ব্রাউজারেই স্বয়ংক্রিয়ভাবে ঢেকে দেওয়া হয়।</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚖️</div>
+        <h3 data-bn="৩. কখনোই 'নিরাপদ' দাবি করি না" data-en="3. We Never Say 'Safe'">৩. কখনোই 'নিরাপদ' দাবি করি না</h3>
+        <p data-bn="শুধু লেখার বিষয়বস্তু দেখে প্রেরক আসল কি না তা নিশ্চিত করা অসম্ভব। তাই আমরা কখনোই প্রেরকের গ্যারান্টি দিই না, নিরপেক্ষ ঝুঁকি তুলে ধরি।" data-en="Text alone can never prove who sent it. We never guarantee authenticity; we objectively evaluate suspicious patterns.">শুধু লেখার বিষয়বস্তু দেখে প্রেরক আসল কি না তা নিশ্চিত করা অসম্ভব। তাই আমরা কখনোই প্রেরকের গ্যারান্টি দিই না, নিরপেক্ষ ঝুঁকি তুলে ধরি।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works in 3 Steps -->
+<section id="how-it-works" class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" data-bn="প্রক্রিয়া" data-en="How It Works">প্রক্রিয়া</div>
+      <h2 class="section-title" data-bn="সহজ ৩টি ধাপে বিশ্লেষণ" data-en="How It Works in 3 Simple Steps">সহজ ৩টি ধাপে বিশ্লেষণ</h2>
+      <p class="section-sub" data-bn="কয়েক সেকেন্ডেই বুঝে নিন মেসেজটির আসল উদ্দেশ্য।" data-en="Understand the underlying intentions of suspicious messages in seconds.">কয়েক সেকেন্ডেই বুঝে নিন মেসেজটির আসল উদ্দেশ্য।</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="step-number">১</div>
+        <h3 data-bn="মেসেজটি পেস্ট করুন" data-en="Paste the Message">মেসেজটি পেস্ট করুন</h3>
+        <p data-bn="এসএমএস বা চ্যাটে পাওয়া মেসেজটি কপি করে বক্সে পেস্ট করুন। নম্বর বা কোড স্বয়ংক্রিয়ভাবে ক্লায়েন্টেই ঢেকে যাবে।" data-en="Paste the suspicious SMS or chat message. Long numbers and codes are automatically masked locally in your browser.">মেসেজটি পেস্ট করুন</p>
+      </div>
+      <div class="card">
+        <div class="step-number">২</div>
+        <h3 data-bn="নিয়ম ও AI বিশ্লেষণ দেখুন" data-en="View Rule & AI Analysis">নিয়ম ও AI বিশ্লেষণ দেখুন</h3>
+        <p data-bn="সুনির্দিষ্ট নিরাপত্তা নিয়ম এবং প্রাসঙ্গিক ভাষা বিশ্লেষণের মাধ্যমে ভয়ের কারণ ও প্রতারণামূলক শব্দগুলো হাইলাইট হয়ে ওঠে।" data-en="Rule patterns and context-aware AI immediately highlight urgency, fee requests, and deceptive phrases.">নিয়ম ও AI বিশ্লেষণ দেখুন</p>
+      </div>
+      <div class="card">
+        <div class="step-number">৩</div>
+        <h3 data-bn="সঠিক পরবর্তী পদক্ষেপ নিন" data-en="Take Safe Next Steps">সঠিক পরবর্তী পদক্ষেপ নিন</h3>
+        <p data-bn="কোথাও ক্লিক বা টাকা না দিয়ে সরাসরি অফিসিয়াল চ্যানেলে কীভাবে যাচাই করতে হবে এবং নিরাপদ থাকতে হবে তার সুস্পষ্ট নির্দেশনা পান।" data-en="Receive clear instructions on how to independently verify through official apps rather than message links.">সঠিক পরবর্তী পদক্ষেপ নিন</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What We Look For (6 scam-type cards) -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" data-bn="শনাক্তকরণ পরিধি" data-en="Scam Patterns">শনাক্তকরণ পরিধি</div>
+      <h2 class="section-title" data-bn="যে ৬ ধরনের প্রতারণার লক্ষণ খোঁজা হয়" data-en="What We Look For (6 Common Scam Types)">যে ৬ ধরনের প্রতারণার লক্ষণ খোঁজা হয়</h2>
+      <p class="section-sub" data-bn="বাংলাদেশে সচরাচর ব্যবহৃত মূল স্ক্যাম কৌশলগুলো。" data-en="The most common fraudulent tactics observed across Bangladesh.">বাংলাদেশে সচরাচর ব্যবহৃত মূল স্ক্যাম কৌশলগুলো।</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-icon">🎁</div>
+        <h3 data-bn="১. পুরস্কার ও বোনাসের প্রলোভন" data-en="1. Fake Bonuses & Lottery Bait">১. পুরস্কার ও বোনাসের প্রলোভন</h3>
+        <p data-bn="লটারি বা ক্যাশব্যাক জেতার মিথ্যা আশ্বাসে গ্রাহককে আকৃষ্ট করে ওটিপি বা অগ্রিম টাকা নেওয়ার চেষ্টা।" data-en="Deceptive claims of unexpected cash rewards or cashback designed to extract OTPs or upfront charges.">লটারি বা ক্যাশব্যাক জেতার মিথ্যা আশ্বাসে গ্রাহককে আকৃষ্ট করে ওটিপি বা অগ্রিম টাকা নেওয়ার চেষ্টা।</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚠️</div>
+        <h3 data-bn="২. অ্যাকাউন্ট বন্ধের কৃত্রিম ভয়" data-en="2. Urgent Account Suspension">২. অ্যাকাউন্ট বন্ধের কৃত্রিম ভয়</h3>
+        <p data-bn="২৪ ঘণ্টার মধ্যে অ্যাকাউন্ট বন্ধ বা ব্লক হয়ে যাবে দাবি করে জরুরি ভিত্তিতে তথ্য চাওয়ার ভীতি তৈরি।" data-en="Fabricating extreme urgency by claiming accounts will be blocked unless immediate action is taken.">২৪ ঘণ্টার মধ্যে অ্যাকাউন্ট বন্ধ বা ব্লক হয়ে যাবে দাবি করে জরুরি ভিত্তিতে তথ্য চাওয়ার ভীতি তৈরি।</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔐</div>
+        <h3 data-bn="৩. পিন ও ওটিপি হাতিয়ে নেওয়ার ফাঁদ" data-en="3. PIN & OTP Theft">৩. পিন ও ওটিপি হাতিয়ে নেওয়ার ফাঁদ</h3>
+        <p data-bn="ব্যাংক বা এমএফএস কর্মকর্তা সেজে ভুল সংশোধনের অজুহাতে গোপন পিন বা ভেরিফিকেশন কোড চাওয়া।" data-en="Impersonators demanding secret PINs or verification codes under the guise of account updates.">ব্যাংক বা এমএফএস কর্মকর্তা সেজে ভুল সংশোধনের অজুহাতে গোপন পিন বা ভেরিফিকেশন কোড চাওয়া।</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💸</div>
+        <h3 data-bn="৪. সহজ লোন ও প্রসেসিং ফি" data-en="4. Fake Loans & Processing Fees">৪. সহজ লোন ও প্রসেসিং ফি</h3>
+        <p data-bn="কোনো জামানত ছাড়াই লাখ টাকা ঋণ অনুমোদনের নামে আগেই প্রসেসিং ফি বাবদ টাকা পাঠানোর দাবি।" data-en="Promising instant collateral-free loans while requiring upfront 'processing fees' or clearance deposits.">কোনো জামানত ছাড়াই লাখ টাকা ঋণ অনুমোদনের নামে আগেই প্রসেসিং ফি বাবদ টাকা পাঠানোর দাবি।</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔗</div>
+        <h3 data-bn="৫. অজানা ও সংক্ষিপ্ত ফিশিং লিংক" data-en="5. Deceptive Links & Phishing">৫. অজানা ও সংক্ষিপ্ত ফিশিং লিংক</h3>
+        <p data-bn="আসল ওয়েবসাইটের মতো দেখতে ভুয়া লিংকে ক্লিক করিয়ে গ্রাহকের পাসওয়ার্ড ও ইউজারনেম চুরি।" data-en="Shortened or deceptive links mimicking official portals to capture login credentials on fake websites.">আসল ওয়েবসাইটের মতো দেখতে ভুয়া লিংকে ক্লিক করিয়ে গ্রাহকের পাসওয়ার্ড ও ইউজারনেম চুরি।</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💼</div>
+        <h3 data-bn="৬. অনলাইন পার্ট-টাইম টাস্ক স্ক্যাম" data-en="6. Fake Job & Task Deposit Scams">৬. অনলাইন পার্ট-টাইম টাস্ক স্ক্যাম</h3>
+        <p data-bn="ভিডিও লাইক বা সাধারণ কাজে ঘরে বসে দৈনিক আয়ের টোপ দিয়ে ধাপে ধাপে বড় অঙ্কের টাকা জমা চাওয়া।" data-en="Luring job seekers with easy online tasks and then demanding deposits to unlock earned commissions.">ভিডিও লাইক বা সাধারণ কাজে ঘরে বসে দৈনিক আয়ের টোপ দিয়ে ধাপে ধাপে বড় অঙ্কের টাকা জমা চাওয়া।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- See It In Action -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" data-bn="বাস্তব অভিজ্ঞতা" data-en="Interactive Preview">বাস্তব অভিজ্ঞতা</div>
+      <h2 class="section-title" data-bn="কার্যপদ্ধতি বাস্তবে দেখুন" data-en="See It In Action">কার্যপদ্ধতি বাস্তবে দেখুন</h2>
+      <p class="section-sub" data-bn="একটি মেসেজের বিভিন্ন অংশ কীভাবে শনাক্ত করা হয় তা লক্ষ্য করুন।" data-en="Notice how specific deceptive keywords and urgency cues are broken down clearly.">একটি মেসেজের বিভিন্ন অংশ কীভাবে শনাক্ত করা হয় তা লক্ষ্য করুন।</p>
+    </div>
+    <div class="action-showcase">
+      <div class="showcase-left">
+        <h3 data-bn="বাক্যের ভেতরে লুকিয়ে থাকা ফাঁদ শনাক্তকরণ" data-en="Exposing Hidden Traps Within Text">বাক্যের ভেতরে লুকিয়ে থাকা ফাঁদ শনাক্তকরণ</h3>
+        <p data-bn="স্ক্যাম মেসেজগুলো সচরাচর সাধারণ মানুষকে তাড়াহুড়া করিয়ে ভুল করাতে চায়। আমাদের বিশ্লেষক সেই মনস্তাত্ত্বিক ফাঁদগুলো ভেঙে স্পষ্ট করে বুঝিয়ে দেয়:" data-en="Fraudulent messages rely on psychological manipulation. Our analyzer breaks these tactics down step-by-step:">
+          স্ক্যাম মেসেজগুলো সচরাচর সাধারণ মানুষকে তাড়াহুড়া করিয়ে ভুল করাতে চায়। আমাদের বিশ্লেষক সেই মনস্তাত্ত্বিক ফাঁদগুলো ভেঙে স্পষ্ট করে বুঝিয়ে দেয়:
+        </p>
+        <ul>
+          <li data-bn="অস্বাভাবিক তাড়াহুড়া ও সময়সীমার চাপ চিহ্নিত করে" data-en="Flags artificial deadlines and panic-inducing urgency">অস্বাভাবিক তাড়াহুড়া ও সময়সীমার চাপ চিহ্নিত করে</li>
+          <li data-bn="গোপন তথ্য (পিন/ওটিপি) দাবির বাক্যগুলো মার্ক করে" data-en="Highlights direct requests for secret credentials">গোপন তথ্য (পিন/ওটিপি) দাবির বাক্যগুলো মার্ক করে</li>
+          <li data-bn="অফিসিয়াল অ্যাপের মাধ্যমে নিজে নিশ্চিত হওয়ার নিয়ম জানায়" data-en="Guides you to verify safely through your official banking app">অফিসিয়াল অ্যাপের মাধ্যমে নিজে নিশ্চিত হওয়ার নিয়ম জানায়</li>
+        </ul>
+        <a href="check.html" class="btn btn-primary" data-bn="আপনার মেসেজ এখনই যাচাই করুন" data-en="Check Your Message Now">আপনার মেসেজ এখনই যাচাই করুন</a>
+      </div>
+      <div class="showcase-right">
+        <div class="showcase-preview-head" data-bn="কাল্পনিক নমুনার ব্যবচ্ছেদ" data-en="Fictional Sample Dissection">কাল্পনিক নমুনার ব্যবচ্ছেদ</div>
+        <div class="mock-card" style="box-shadow:none;border-color:var(--line);">
+          <div style="margin-bottom:10px;">
+            <span class="verdict-chip strong" data-bn="▲ শক্ত সতর্কতা" data-en="▲ Strong warning">▲ শক্ত সতর্কতা</span>
+          </div>
+          <div class="mock-msg-box" style="margin-bottom:12px;">
+            <span data-bn="জরুরি নোটিশ: আপনার একাউন্ট সাময়িক স্থগিত করা হয়েছে। আনলক করতে এই লিংকে ক্লিক করে " data-en="Urgent notice: Your account is suspended. Click link and submit ">জরুরি নোটিশ: আপনার একাউন্ট সাময়িক স্থগিত করা হয়েছে। আনলক করতে এই লিংকে ক্লিক করে </span><mark data-bn="পাসওয়ার্ড দিন" data-en="your password">পাসওয়ার্ড দিন</mark>।
+          </div>
+          <div style="font-size:0.88rem;color:var(--strong);font-weight:600;margin-bottom:4px;" data-bn="শনাক্ত হওয়া কারণ:" data-en="Detected warning:">শনাক্ত হওয়া কারণ:</div>
+          <div style="font-size:0.86rem;color:var(--ink-secondary);" data-bn="“পাসওয়ার্ড দিন” — কোনো আসল আর্থিক প্রতিষ্ঠান কখনো এসএমএসে বা লিংকের মাধ্যমে পাসওয়ার্ড চায় না।" data-en="“Enter password” — Genuine financial institutions never ask for passwords via links.">
+            “পাসওয়ার্ড দিন” — কোনো আসল আর্থিক প্রতিষ্ঠান কখনো এসএমএসে বা লিংকের মাধ্যমে পাসওয়ার্ড চায় না।
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Who It Is For -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" data-bn="কার জন্য উপযোগী" data-en="Target Audience">কার জন্য উপযোগী</div>
+      <h2 class="section-title" data-bn="সবার সুরক্ষায় তৈরি" data-en="Who It Is For">সবার সুরক্ষায় তৈরি</h2>
+      <p class="section-sub" data-bn="প্রতিটি পরিবারের ডিজিটাল আর্থিক সুরক্ষায় একটি সহজ সহযোগী।" data-en="A straightforward safety companion for every digital mobile user in Bangladesh.">প্রতিটি পরিবারের ডিজিটাল আর্থিক সুরক্ষায় একটি সহজ সহযোগী।</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-icon">📱</div>
+        <h3 data-bn="সাধারণ ফোন ব্যবহারকারী" data-en="Everyday Mobile Users">সাধারণ ফোন ব্যবহারকারী</h3>
+        <p data-bn="বিকাশ, নগদ বা ব্যাংকিং গ্রাহক যারা প্রতিনিয়ত অচেনা নম্বর থেকে ক্যাশব্যাক, লোন বা লটারির প্রলোভনভরা মেসেজ পান।" data-en="Mobile wallet and bank customers who frequently receive unsolicited promotional messages or reward claims.">বিকাশ, নগদ বা ব্যাংকিং গ্রাহক যারা প্রতিনিয়ত অচেনা নম্বর থেকে ক্যাশব্যাক, লোন বা লটারির প্রলোভনভরা মেসেজ পান।</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎓</div>
+        <h3 data-bn="চাকরিপ্রার্থী ও শিক্ষার্থী" data-en="Job Seekers & Students">চাকরিপ্রার্থী ও শিক্ষার্থী</h3>
+        <p data-bn="অনলাইন পার্ট-টাইম কাজ, ইউটিউব ভিডিও দেখার বিনিময়ে টাকা বা সহজ লোনের নামে চলা ফাঁদ এড়াতে।" data-en="Students and youth looking for online opportunities who need protection against task deposit schemes.">অনলাইন পার্ট-টাইম কাজ, ইউটিউব ভিডিও দেখার বিনিময়ে টাকা বা সহজ লোনের নামে চলা ফাঁদ এড়াতে।</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👨‍👩‍👧‍👦</div>
+        <h3 data-bn="অভিভাবক ও পরিবার" data-en="Parents & Families">অভিভাবক ও পরিবার</h3>
+        <p data-bn="পরিবারের প্রবীণ বা অল্প প্রযুক্তি-সচেতন সদস্যদের সুরক্ষিত রাখতে এবং যেকোনো মেসেজ সহজেই মিলিয়ে দেখতে।" data-en="Helping elderly relatives and non-technical family members easily verify suspicious texts before taking action.">পরিবারের প্রবীণ বা অল্প প্রযুক্তি-সচেতন সদস্যদের সুরক্ষিত রাখতে এবং যেকোনো মেসেজ সহজেই মিলিয়ে দেখতে।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Privacy Promise -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="privacy-box">
+      <div class="privacy-grid">
+        <div class="privacy-badge">🔒</div>
+        <div>
+          <h3 style="font-size:1.5rem;margin-bottom:10px;" data-bn="আমাদের গোপনীয়তা ও নিরাপত্তা নীতি" data-en="Our Privacy & Data Safety Commitment">আমাদের গোপনীয়তা ও নিরাপত্তা নীতি</h3>
+          <p style="color:var(--ink-secondary);margin-bottom:14px;" data-bn="আমাদের সার্ভারে কোনো তথ্য সংরক্ষণ করা হয় না। বিশ্লেষণের জন্য মাস্কড (ঢেকে দেওয়া) টেক্সট একটি AI সেবায় পাঠানো হয়। আপনি 'সংরক্ষণ' নির্বাচন করলে চেকটি কেবল এই ডিভাইসেই সংরক্ষিত থাকবে এবং আপনি যেকোনো সময় এটি মুছে ফেলতে পারবেন।" data-en="Nothing is stored on our servers. Masked text is sent to an AI service for analysis. If you choose Save, the check is stored only on this device and you can delete it any time.">
+            আমাদের সার্ভারে কোনো তথ্য সংরক্ষণ করা হয় না। বিশ্লেষণের জন্য মাস্কড (ঢেকে দেওয়া) টেক্সট একটি AI সেবায় পাঠানো হয়। আপনি 'সংরক্ষণ' নির্বাচন করলে চেকটি কেবল এই ডিভাইসেই সংরক্ষিত থাকবে এবং আপনি যেকোনো সময় এটি মুছে ফেলতে পারবেন।
+          </p>
+          <div style="font-size:0.92rem;color:var(--mute);" data-bn="মনে রাখবেন: কোনো অবস্থাতেই পাসওয়ার্ড, গোপন পিন বা ব্যাংক কার্ডের তথ্য কোথাও লিখবেন না।" data-en="Remember: Never type actual passwords, secret PINs, or bank card credentials anywhere online.">
+            মনে রাখবেন: কোনো অবস্থাতেই পাসওয়ার্ড, গোপন পিন বা ব্যাংক কার্ডের তথ্য কোথাও লিখবেন না।
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Roadmap Teaser -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" data-bn="ভবিষ্যৎ পরিকল্পনা" data-en="Roadmap Teaser">ভবিষ্যৎ পরিকল্পনা</div>
+      <h2 class="section-title" data-bn="সামনে যা যুক্ত হচ্ছে" data-en="Upcoming Roadmap Features">সামনে যা যুক্ত হচ্ছে</h2>
+      <p class="section-sub" data-bn="ব্যবহারকারীদের অভিজ্ঞতা আরো সহজ ও সুরক্ষিত করতে আমাদের পরবর্তী সংযোজনসমূহ।" data-en="Planned enhancements to make fraud detection even simpler and more resilient.">ব্যবহারকারীদের অভিজ্ঞতা আরো সহজ ও সুরক্ষিত করতে আমাদের পরবর্তী সংযোজনসমূহ।</p>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-icon">📸</div>
+        <h3 data-bn="স্ক্রিনশট ও ছবি বিশ্লেষণ" data-en="Screenshot OCR Text Check">স্ক্রিনশট ও ছবি বিশ্লেষণ</h3>
+        <p data-bn="টাইপ না করে সরাসরি এসএমএস বা মেসেজের স্ক্রিনশট আপলোড করে লেখা বিশ্লেষণ করার সুবিধা।" data-en="Upload SMS screenshots directly to automatically extract and analyze text without manual typing.">টাইপ না করে সরাসরি এসএমএস বা মেসেজের স্ক্রিনশট আপলোড করে লেখা বিশ্লেষণ করার সুবিধা।</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📚</div>
+        <h3 data-bn="সাম্প্রতিক স্ক্যাম ডিরেক্টরি" data-en="Known Scam Directory">সাম্প্রতিক স্ক্যাম ডিরেক্টরি</h3>
+        <p data-bn="বাংলাদেশে চলমান পরিচিত ও নতুন প্রতারণামূলক মেসেজগুলোর একটি তথ্যবহুল সচেতনতামূলক ভাণ্ডার।" data-en="A community awareness repository of known active scams and warning patterns in Bangladesh.">বাংলাদেশে চলমান পরিচিত ও নতুন প্রতারণামূলক মেসেজগুলোর একটি তথ্যবহুল সচেতনতামূলক ভাণ্ডার।</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3 data-bn="সম্পূর্ণ অফলাইন মোড" data-en="Full Offline Detection">সম্পূর্ণ অফলাইন মোড</h3>
+        <p data-bn="ইন্টারনেট সংযোগ ধীর বা বন্ধ থাকলেও ডিভাইসের নিজস্ব নিয়ম ইঞ্জিনের মাধ্যমে মৌলিক যাচাইয়ের সুযোগ।" data-en="Enable local in-browser pattern checking even when internet connectivity is poor or disconnected.">ইন্টারনেট সংযোগ ধীর বা বন্ধ থাকলেও ডিভাইসের নিজস্ব নিয়ম ইঞ্জিনের মাধ্যমে মৌলিক যাচাইয়ের সুযোগ।</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👨‍👩‍👧</div>
+        <h3 data-bn="পরিবারের জন্য সতর্কতা শেয়ার" data-en="Family Alert Cards">পরিবারের জন্য সতর্কতা শেয়ার</h3>
+        <p data-bn="একটি ক্লিকেই পরিবারের প্রবীণ ও স্বজনদের সতর্ক করতে সহজ সতর্কবার্তা কার্ড তৈরির সুবিধা।" data-en="Generate simple, clear advisory cards to quickly warn elders and family groups on social media.">একটি ক্লিকেই পরিবারের প্রবীণ ও স্বজনদের সতর্ক করতে সহজ সতর্কবার্তা কার্ড তৈরির সুবিধা।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section (6 questions) -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" data-bn="জিজ্ঞাসা" data-en="Frequently Asked Questions">জিজ্ঞাসা</div>
+      <h2 class="section-title" data-bn="সাধারণ প্রশ্নোত্তর" data-en="Frequently Asked Questions">সাধারণ প্রশ্নোত্তর</h2>
+      <p class="section-sub" data-bn="আপনার মনের সম্ভাব্য প্রশ্নগুলোর স্পষ্ট ও সততাপূর্ণ উত্তর।" data-en="Clear, honest answers to common inquiries about this service.">আপনার মনের সম্ভাব্য প্রশ্নগুলোর স্পষ্ট ও সততাপূর্ণ উত্তর।</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary data-bn="১. এই টুল কি কোনো মেসেজকে শতভাগ 'আসল' বা 'নিরাপদ' বলতে পারে?" data-en="1. Can this tool guarantee a message is 100% genuine or safe?">১. এই টুল কি কোনো মেসেজকে শতভাগ 'আসল' বা 'নিরাপদ' বলতে পারে?</summary>
+        <div class="faq-content" data-bn="না। কোনো টুল শুধু লেখার টেক্সট দেখে প্রেরক আসল কি না তা নিশ্চিত করতে পারে না, কারণ স্ক্যামাররা আসল মেসেজের ভাষাও হুবহু নকল করতে পারে। আমরা কখনোই কোনো মেসেজকে 'নিরাপদ' বলি না; বরং সম্ভাব্য ঝুঁকি বিশ্লেষণ করে দেখাই।" data-en="No. Text alone cannot verify who sent a message, because scammers can copy legitimate templates. We never label messages as 'safe'; we objectively analyze potential warning signs.">
+          না। কোনো টুল শুধু লেখার টেক্সট দেখে প্রেরক আসল কি না তা নিশ্চিত করতে পারে না, কারণ স্ক্যামাররা আসল মেসেজের ভাষাও হুবহু নকল করতে পারে। আমরা কখনোই কোনো মেসেজকে 'নিরাপদ' বলি না; বরং সম্ভাব্য ঝুঁকি বিশ্লেষণ করে দেখাই।
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary data-bn="২. আমার পেস্ট করা মেসেজ কি কোথাও জমা রাখা হয়?" data-en="2. Is my pasted message stored on any server?">২. আমার পেস্ট করা মেসেজ কি কোথাও জমা রাখা হয়?</summary>
+        <div class="faq-content" data-bn="না, সার্ভারে কোনো মেসেজ জমা রাখা হয় না। দীর্ঘ সংখ্যা ও কোড ব্রাউজারেই ঢেকে দেওয়া হয়। এটি সম্পূর্ণ প্রাইভেসি-বান্ধব এবং কোনো লগ সংরক্ষিত হয় না।" data-en="No, messages are never stored on any server. Sensitive numbers and codes are masked in your browser before any request. We maintain zero message logs.">
+          না, সার্ভারে কোনো মেসেজ জমা রাখা হয় না। দীর্ঘ সংখ্যা ও কোড ব্রাউজারেই ঢেকে দেওয়া হয়। এটি সম্পূর্ণ প্রাইভেসি-বান্ধব এবং কোনো লগ সংরক্ষিত হয় না।
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary data-bn="৩. টুলটি প্রতারণা শনাক্ত করতে কীভাবে কাজ করে?" data-en="3. How does the tool analyze suspicious patterns?">৩. টুলটি প্রতারণা শনাক্ত করতে কীভাবে কাজ করে?</summary>
+        <div class="faq-content" data-bn="এটি প্রথমে নিরাপত্তা নিয়মাবলির সাহায্যে পরিচিত প্রতারণার লক্ষণ (যেমন গোপন পিন চাওয়া, লটারির দাবি, তাড়াহুড়ার হুমকি) খোঁজে এবং ঐচ্ছিক AI মডেলের মাধ্যমে মেসেজের অন্তর্নিহিত ফাঁদ ব্যাখ্যা করে।" data-en="It combines a local rule-engine targeting known fraud patterns (PIN demands, fake lotteries, urgency triggers) with contextual AI to explain the underlying intent.">
+          এটি প্রথমে নিরাপত্তা নিয়মাবলির সাহায্যে পরিচিত প্রতারণার লক্ষণ (যেমন গোপন পিন চাওয়া, লটারির দাবি, তাড়াহুড়ার হুমকি) খোঁজে এবং ঐচ্ছিক AI মডেলের মাধ্যমে মেসেজের অন্তর্নিহিত ফাঁদ ব্যাখ্যা করে।
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary data-bn="৪. মেসেজে পাওয়া নম্বরে ফোন করে নিশ্চিত হওয়া কি ঠিক?" data-en="4. Should I call the phone number mentioned inside the message?">৪. মেসেজে পাওয়া নম্বরে ফোন করে নিশ্চিত হওয়া কি ঠিক?</summary>
+        <div class="faq-content" data-bn="কখনোই না! স্ক্যাম মেসেজে দেওয়া নম্বরটি প্রতারকদের নিজস্ব হতে পারে। সব সময় আপনার ব্যাংক কার্ডের পেছনের অফিসিয়াল হেল্পলাইন নম্বর অথবা অফিশিয়াল অ্যাপ থেকে যোগাযোগ করুন।" data-en="Never! Numbers inside scam messages often lead directly to the fraudsters. Always use the official helpline printed on the back of your card or inside the official app.">
+          কখনোই না! স্ক্যাম মেসেজে দেওয়া নম্বরটি প্রতারকদের নিজস্ব হতে পারে। সব সময় আপনার ব্যাংক কার্ডের পেছনের অফিসিয়াল হেল্পলাইন নম্বর অথবা অফিশিয়াল অ্যাপ থেকে যোগাযোগ করুন।
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary data-bn="৫. আগে ভুলবশত ওটিপি বা টাকা পাঠিয়ে থাকলে করণীয় কী?" data-en="5. What should I do if I already shared an OTP or sent money?">৫. আগে ভুলবশত ওটিপি বা টাকা পাঠিয়ে থাকলে করণীয় কী?</summary>
+        <div class="faq-content" data-bn="দেরি না করে তৎক্ষণাৎ আপনার ব্যাংক বা এমএফএস প্রতিষ্ঠানের অফিশিয়াল নম্বরে যোগাযোগ করে অ্যাকাউন্ট সাময়িক লক করুন, পিন/পাসওয়ার্ড বদলান এবং লেনদেনের তথ্য ও স্ক্রিনশট সংরক্ষণ করে রাখুন।" data-en="Immediately contact your bank or mobile financial service via their official hotline to lock your account, change PINs, and save all transaction screenshots.">
+          দেরি না করে তৎক্ষণাৎ আপনার ব্যাংক বা এমএফএস প্রতিষ্ঠানের অফিশিয়াল নম্বরে যোগাযোগ করে অ্যাকাউন্ট সাময়িক লক করুন, পিন/পাসওয়ার্ড বদলান এবং লেনদেনের তথ্য ও স্ক্রিনশট সংরক্ষণ করে রাখুন।
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary data-bn="৬. এই সেবা ব্যবহার করতে কি কোনো ফি বা নিবন্ধন দরকার?" data-en="6. Does this service require registration or fees?">৬. এই সেবা ব্যবহার করতে কি কোনো ফি বা নিবন্ধন দরকার?</summary>
+        <div class="faq-content" data-bn="না, এটি সম্পূর্ণ বিনামূল্যে ব্যবহারের জন্য উন্মুক্ত। কোনো প্রকার রেজিস্ট্রেশন, ব্যক্তিগত তথ্য বা পেমেন্ট প্রয়োজন নেই।" data-en="No, it is completely free and public. No registration, login, personal data submission, or payment is ever required.">
+          না, এটি সম্পূর্ণ বিনামূল্যে ব্যবহারের জন্য উন্মুক্ত। কোনো প্রকার রেজিস্ট্রেশন, ব্যক্তিগত তথ্য বা পেমেন্ট প্রয়োজন নেই।
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Final Call to Action -->
+<section class="cta-band">
+  <div class="container">
+    <h2 data-bn="সন্দেহজনক মেসেজ এসেছে? এখনই যাচাই করে নিশ্চিত হন" data-en="Received a suspicious message? Check it right now">
+      সন্দেহজনক মেসেজ এসেছে? এখনই যাচাই করে নিশ্চিত হন
+    </h2>
+    <p data-bn="কোনো ব্যক্তিগত তথ্য ছাড়াই কয়েক সেকেন্ডে মেসেজটির উদ্দেশ্য ও সতর্কতা যাচাই করুন।" data-en="Analyze the intent and warning signs of any message in seconds without sharing sensitive credentials.">
+      কোনো ব্যক্তিগত তথ্য ছাড়াই কয়েক সেকেন্ডে মেসেজটির উদ্দেশ্য ও সতর্কতা যাচাই করুন।
+    </p>
+    <a href="check.html" class="btn btn-primary btn-lg" data-bn="মেসেজ যাচাই করুন" data-en="Check a message">
+      মেসেজ যাচাই করুন
+    </a>
+  </div>
+</section>
+
+<footer id="site-footer"></footer>
+
+<script src="site.js"></script>
 </body>
 </html>
