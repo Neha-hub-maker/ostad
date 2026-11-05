@@ -6,12 +6,12 @@
 :root {
   --font-main: "Hind Siliguri", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   
-  /* Color Palette */
+  /* Color Palette with WCAG AA compliance (4.5:1+ contrast) */
   --ink: #12202b;
-  --ink-secondary: #334454;
-  --mute: #566673;
-  --line: #d3dce3;
-  --line-light: #e6edf2;
+  --ink-secondary: #2d3f50;
+  --mute: #485966;
+  --line: #cbd5e1;
+  --line-light: #e2e8f0;
   --bg: #f4f7f9;
   --card: #ffffff;
   --brand: #0b5d8a;
@@ -23,18 +23,18 @@
   --navy-hero: #0a192f;
   --navy-surface: #13243f;
   --navy-line: #1e355b;
-  --navy-text-mute: #9cb1c9;
+  --navy-text-mute: #a2b7cf;
 
   /* Verdict Colors with accessible contrast */
   --strong: #b3261e;
   --strong-bg: #fdf2f2;
   --strong-border: #f8c8c5;
 
-  --some: #a85f00;
+  --some: #944f00;
   --some-bg: #fff8ed;
   --some-border: #fce2b8;
 
-  --cant: #3b5878;
+  --cant: #2c4d6f;
   --cant-bg: #f0f4f8;
   --cant-border: #cbdbe8;
 
@@ -149,11 +149,14 @@ body {
   color: var(--ink-secondary);
   text-decoration: none;
   font-weight: 500;
-  padding: 8px 12px;
+  padding: 8px 14px;
   border-radius: var(--radius-sm);
   transition: background-color 0.15s ease, color 0.15s ease;
   white-space: nowrap;
   font-size: 0.96rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .nav-link:hover {
@@ -217,13 +220,17 @@ body {
   border: 0;
   background: var(--card);
   color: var(--brand);
-  padding: 6px 14px;
+  padding: 8px 16px;
   font: inherit;
   font-size: 0.92rem;
   font-weight: 600;
   cursor: pointer;
-  min-height: 40px;
+  min-height: 44px;
+  min-width: 44px;
   transition: background-color 0.15s ease, color 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .lang-switcher button:first-child, .lang button:first-child {
@@ -765,9 +772,12 @@ textarea#msg:focus {
   font-size: 0.92rem;
   cursor: pointer;
   margin: 3px;
-  min-height: 40px;
+  min-height: 44px;
   color: var(--ink-secondary);
   transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #exs button:hover, .exp button:hover {
@@ -1318,11 +1328,17 @@ input:checked + .slider:before {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius-pill);
-  padding: 7px 16px;
+  padding: 8px 18px;
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.15s ease;
+  text-decoration: none;
+  color: var(--ink-secondary);
 }
 
 .filter-chip.active {
