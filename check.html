@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scam Message Explainer - মেসেজ যাচাই</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="site-header"></header>
+
+<main class="tool-main container">
+  <div class="tool-header">
+    <h1 data-t="tag">সন্দেহজনক মেসেজ পেস্ট করুন। বুঝুন কেন ঝুঁকিপূর্ণ এবং এখন কী করবেন।</h1>
+    <p class="small" data-bn="প্রতারণামূলক মেসেজ, ওটিপি ফাঁদ বা ভুয়া অফার তৎক্ষণাৎ শনাক্ত করুন।" data-en="Instantly analyze suspicious messages, OTP traps, or fake offers.">প্রতারণামূলক মেসেজ, ওটিপি ফাঁদ বা ভুয়া অফার তৎক্ষণাৎ শনাক্ত করুন।</p>
+  </div>
+
+  <label for="msg" class="sr" data-t="lbl">সন্দেহজনক মেসেজ</label>
+  <textarea id="msg" rows="6" maxlength="1500" placeholder="এখানে মেসেজটি পেস্ট করুন…"></textarea>
+
+  <div class="row">
+    <button id="go" type="button" class="btn btn-primary primary" data-t="check">যাচাই করুন</button>
+    <span class="exlab" data-t="ex">উদাহরণ:</span>
+    <span id="exs"></span>
+  </div>
+
+  <p id="status" class="status" role="status" aria-live="polite"></p>
+
+  <section id="result" class="res" hidden aria-live="polite">
+    <h2 id="vlabel" class="verdict"></h2>
+    <p id="summary" class="summary"></p>
+    <p id="modeline" class="small"></p>
+    <p id="shown" class="shown"></p>
+    <h3 data-t="why">কেন সতর্কতা?</h3>
+    <ul id="why"></ul>
+    <p id="now" class="now"></p>
+    <p id="banner" class="small"></p>
+    <h3 data-t="acted">আগেই কিছু করে ফেলেছেন?</h3>
+    <div id="exp" class="exp"></div>
+    <p id="steps" class="steps" hidden></p>
+  </section>
+
+  <p class="small priv" data-t="priv">ঢেকে-দেওয়া টেক্সট বিশ্লেষণের জন্য একটি AI সেবায় (Groq) যায়। মেসেজ আমরা সংরক্ষণ করি না। তবু পাসওয়ার্ড, পিন বা OTP পেস্ট করবেন না।</p>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="site.js"></script>
+<script src="rules.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

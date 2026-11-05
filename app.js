@@ -1,6 +1,8 @@
 (function () {
   var $ = function (id) { return document.getElementById(id); };
-  var lang = 'bn', last = null, busy = false, expBtns = [], exBtns = [];
+  var lang = (function () {
+    try { return localStorage.getItem('lang') || 'bn'; } catch (e) { return 'bn'; }
+  })(), last = null, busy = false, expBtns = [], exBtns = [];
   var EX = [
     'অভিনন্দন! আপনি ৫,০০০ টাকা বোনাস জিতেছেন। বোনাস পেতে এখনই আপনার বিকাশ পিন ও OTP কোড আমাদের জানান, নয়তো ২৪ ঘণ্টার মধ্যে অ্যাকাউন্ট বন্ধ হয়ে যাবে।',
     'Dear Customer, never share your OTP, PIN or CVV with anyone, including bank staff. Beware of fake cashback links and unknown loan apps.',
@@ -143,7 +145,27 @@
     };
     $('exp').appendChild(b); expBtns.push(b);
   })(i);
-  document.querySelectorAll('[data-l]').forEach(function (b) { b.onclick = function () { lang = b.getAttribute('data-l'); applyLang(); }; });
+  function updateLang(newL) {
+    if (!newL || newL === lang) return;
+    lang = newL;
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+    applyLang();
+    var evt = new CustomEvent('langchange', { detail: { lang: lang } });
+    document.dispatchEvent(evt);
+    window.dispatchEvent(evt);
+  }
+  document.querySelectorAll('[data-l]').forEach(function (b) { b.onclick = function () { updateLang(b.getAttribute('data-l')); }; });
+  function onLangChange(e) {
+    var l = (e && e.detail && e.detail.lang) || (function () {
+      try { return localStorage.getItem('lang') || 'bn'; } catch (err) { return 'bn'; }
+    })();
+    if (l && l !== lang) {
+      lang = l;
+      applyLang();
+    }
+  }
+  document.addEventListener('langchange', onLangChange);
+  window.addEventListener('langchange', onLangChange);
   $('go').onclick = check;
   var s = $('sticker');
   s.onerror = function () { var x = document.createElement('span'); x.className = 'stk'; x.textContent = 'Built For Ostad Presents YUNet AIgnite Buildathon 2026'; s.replaceWith(x); };
