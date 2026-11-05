@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scam Message Explainer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="bar">
+  <strong data-t="title"></strong>
+  <div class="tools">
+    <img id="sticker" src="assets/sticker.png" width="188" height="56" alt="Built For Ostad Presents YUNet AIgnite Buildathon 2026">
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-l="bn" aria-pressed="true">বাংলা</button>
+      <button type="button" data-l="en" aria-pressed="false">English</button>
+    </div>
+  </div>
+</header>
+<main>
+  <h1 data-t="tag"></h1>
+  <label for="msg" class="sr" data-t="lbl"></label>
+  <textarea id="msg" rows="6" maxlength="1500"></textarea>
+  <div class="row">
+    <button id="go" type="button" class="primary" data-t="check"></button>
+    <span class="exlab" data-t="ex"></span>
+    <span id="exs"></span>
+  </div>
+  <p id="status" class="status" role="status" aria-live="polite"></p>
+
+  <section id="result" class="res" hidden aria-live="polite">
+    <h2 id="vlabel" class="verdict"></h2>
+    <p id="summary" class="summary"></p>
+    <p id="modeline" class="small"></p>
+    <p id="shown" class="shown"></p>
+    <h3 data-t="why"></h3>
+    <ul id="why"></ul>
+    <p id="now" class="now"></p>
+    <p id="banner" class="small"></p>
+    <h3 data-t="acted"></h3>
+    <div id="exp" class="exp"></div>
+    <p id="steps" class="steps" hidden></p>
+  </section>
+  <p class="small priv" data-t="priv"></p>
+</main>
+<script src="rules.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
