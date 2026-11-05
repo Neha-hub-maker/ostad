@@ -148,11 +148,11 @@
           '</div>' +
         '</div>' +
         '<div class="footer-bottom">' +
-          '<div class="footer-bottom-text" data-bn="প্রাইভেসি প্রতিশ্রুতি: সার্ভারে কোনো মেসেজ জমা হয় না। ট্র্যাকার বা কুকি নেই। ব্রাউজারে নম্বর ঢেকে পাঠানো হয়।" data-en="Privacy Promise: No messages stored on the server. Zero trackers or cookies. Client-side number masking.">' +
-            (currentLang === 'en' ? 'Privacy Promise: No messages stored on the server. Zero trackers or cookies. Client-side number masking.' : 'প্রাইভেসি প্রতিশ্রুতি: সার্ভারে কোনো মেসেজ জমা হয় না। ট্র্যাকার বা কুকি নেই। ব্রাউজারে নম্বর ঢেকে পাঠানো হয়।') +
+          '<div class="footer-bottom-text" data-bn="আমাদের সার্ভারে কোনো তথ্য সংরক্ষণ করা হয় না। বিশ্লেষণের জন্য মাস্কড (ঢেকে দেওয়া) টেক্সট একটি AI সেবায় পাঠানো হয়। আপনি \'সংরক্ষণ\' নির্বাচন করলে চেকটি কেবল এই ডিভাইসেই সংরক্ষিত থাকবে এবং আপনি যেকোনো সময় এটি মুছে ফেলতে পারবেন।" data-en="Nothing is stored on our servers. Masked text is sent to an AI service for analysis. If you choose Save, the check is stored only on this device and you can delete it any time.">' +
+            (currentLang === 'en' ? 'Nothing is stored on our servers. Masked text is sent to an AI service for analysis. If you choose Save, the check is stored only on this device and you can delete it any time.' : 'আমাদের সার্ভারে কোনো তথ্য সংরক্ষণ করা হয় না। বিশ্লেষণের জন্য মাস্কড (ঢেকে দেওয়া) টেক্সট একটি AI সেবায় পাঠানো হয়। আপনি \'সংরক্ষণ\' নির্বাচন করলে চেকটি কেবল এই ডিভাইসেই সংরক্ষিত থাকবে এবং আপনি যেকোনো সময় এটি মুছে ফেলতে পারবেন।') +
           '</div>' +
           '<div class="footer-bottom-copy">' +
-            '<span>Built For Ostad Presents YUNet AIgnite Buildathon 2026</span>' +
+            '<span>Built by Neha for the Ostad YUNet AIgnite Buildathon 2026</span>' +
           '</div>' +
         '</div>' +
       '</div>';

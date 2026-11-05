@@ -35,7 +35,7 @@
       ],
       modeAI: 'নিয়ম + AI বিশ্লেষণ', aiOff: 'AI বিশ্লেষণ এখন পাওয়া যাচ্ছে না; শুধু নিয়ম-ভিত্তিক ফলাফল দেখানো হচ্ছে।',
       rate: 'AI এখন ব্যস্ত; শুধু নিয়ম-ভিত্তিক ফলাফল দেখানো হচ্ছে। কিছুক্ষণ পর আবার চেষ্টা করুন।', masked: 'বড় সংখ্যা ও কোড ঢেকে দেওয়া হয়েছে।',
-      priv: 'ঢেকে-দেওয়া টেক্সট বিশ্লেষণের জন্য একটি AI সেবায় (Groq) যায়। মেসেজ আমরা সংরক্ষণ করি না। তবু পাসওয়ার্ড, পিন বা OTP পেস্ট করবেন না।'
+      priv: 'আমাদের সার্ভারে কোনো তথ্য সংরক্ষণ করা হয় না। বিশ্লেষণের জন্য মাস্কড (ঢেকে দেওয়া) টেক্সট একটি AI সেবায় পাঠানো হয়। আপনি \'সংরক্ষণ\' নির্বাচন করলে চেকটি কেবল এই ডিভাইসেই সংরক্ষিত থাকবে এবং আপনি যেকোনো সময় এটি মুছে ফেলতে পারবেন।'
     },
     en: {
       title: 'Scam Message Explainer', tag: 'Paste a suspicious message. See why it is risky and what to do next.',
@@ -63,7 +63,7 @@
       ],
       modeAI: 'Rules + AI analysis', aiOff: 'AI analysis is unavailable right now. Showing the rule-based result only.',
       rate: 'AI is busy. Showing the rule-based result only. Please try again shortly.', masked: 'Long numbers and codes were hidden.',
-      priv: 'Masked text is sent to an AI service (Groq) for analysis. We do not store messages. Still, never paste passwords, PINs or OTPs.'
+      priv: 'Nothing is stored on our servers. Masked text is sent to an AI service for analysis. If you choose Save, the check is stored only on this device and you can delete it any time.'
     }
   };
 
